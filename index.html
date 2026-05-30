@@ -65,6 +65,28 @@ line-height:1.8;
 text-align:center;
 }
 
+<section class="search-luxury">
+
+<div class="search-box">
+
+<input 
+type="text" 
+id="propertySearch" 
+placeholder="Buscar por ciudad, tipo, precio, recámaras, inversión, playa, preventa..."
+onkeyup="buscarPropiedades()">
+
+<button type="button" onclick="limpiarBusqueda()">
+Limpiar
+</button>
+
+</div>
+
+<p class="search-help">
+Busca por palabras clave: casas, departamentos, terrenos, locales, bodegas, playa, inversión, preventa, amenidades, México, Estados Unidos, Canadá, recámaras, niveles o ciudad.
+</p>
+
+</section>  
+
 .property-row{
 
 display:grid;
@@ -156,6 +178,71 @@ color:#d4af37;
 transform:translateY(-2px);
 }
 
+.search-luxury{
+padding:0 8% 25px;
+max-width:1500px;
+margin:auto;
+}
+
+.search-box{
+display:flex;
+gap:15px;
+background:rgba(0,0,0,.42);
+backdrop-filter:blur(12px);
+border:1px solid rgba(212,175,55,.22);
+border-radius:50px;
+padding:12px;
+box-shadow:0 18px 50px rgba(0,0,0,.35);
+}
+
+.search-box input{
+flex:1;
+background:transparent;
+border:none;
+outline:none;
+color:white;
+font-size:16px;
+padding:14px 20px;
+}
+
+.search-box input::placeholder{
+color:rgba(255,255,255,.58);
+}
+
+.search-box button{
+border:none;
+border-radius:40px;
+padding:12px 24px;
+background:#d4af37;
+color:#000;
+font-weight:800;
+cursor:pointer;
+transition:.3s;
+}
+
+.search-box button:hover{
+background:white;
+transform:translateY(-2px);
+}
+
+.search-help{
+max-width:1050px;
+margin:15px auto 0;
+text-align:center;
+font-size:13px;
+line-height:1.7;
+color:rgba(255,255,255,.65);
+}
+
+.search-box{
+flex-direction:column;
+border-radius:28px;
+}
+
+.search-box button{
+width:100%;
+}  
+
 @media(max-width:1100px){
 
 .property-row{
@@ -192,6 +279,9 @@ preventa e inversión inmobiliaria en un solo lugar.
 <!-- PROPIEDAD 1 -->
 
 <div class="property-row">
+
+<div class="property-row" 
+data-keywords="villa sol casa puerto vallarta jalisco mexico venta renta familia inversion 3 recamaras tres recamaras 2.5 baños dos plantas cochera playa galerias walmart sams">  
 
 <div class="property-image">
 <img src="images/villa-sol.jpg">
@@ -241,6 +331,9 @@ Perfil Asesor
 
 <div class="property-row">
 
+<div class="property-row" 
+data-keywords="poetas terreno puerto vallarta jalisco mexico comercial inversion esquina avenida uso mixto local plaza desarrollo franquicia bodega">  
+
 <div class="property-image">
 <img src="images/terreno-poetas.jpg">
 </div>
@@ -288,6 +381,9 @@ Perfil Asesor
 <!-- PROPIEDAD 3 -->
 
 <div class="property-row">
+
+<div class="property-row" 
+data-keywords="desarrollo la calma casa renta 3 tres reacamaras 2 dos plantas cochera alberca coto desarrollo casa club ixtapa puerto vallarta cuc cercas seguridad 24/7 ">  
 
 <div class="property-image">
 <img src="images/la-calma.jpg">
@@ -337,6 +433,9 @@ Perfil Asesor
 
 <div class="property-row">
 
+<div class="property-row" 
+data-keywords="campestre naturaleza laguna lagunas alberca terreno hectareas cerca playa virgen plano palmeras paz">  
+
 <div class="property-image">
 <img src="images/dos-lagunas.jpg">
 </div>
@@ -384,6 +483,9 @@ Perfil Asesor
 <!-- PROPIEDAD 5 -->
 
 <div class="property-row">
+
+<div class="property-row" 
+data-keywords="preventa amenidades avenida acceso bucerias nuevo nayarit vallarta bahia de banderas departamento acceso playa airbnb desarrollo alana life style seguridad privacidad 24/7">  
 
 <div class="property-image">
 <img src="images/alana.jpg">
@@ -433,6 +535,9 @@ Perfil Asesor
 
 <div class="property-row">
 
+<div class="property-row" 
+data-keywords="sendas desarrollo amenidades privacidad 24/7 cuc ixtapa puerto vallarta airbnb accesible 2 dos recamaras habitaciones alberca areas verdes pet friendly">  
+
 <div class="property-image">
 <img src="images/sendas.jpg">
 </div>
@@ -481,6 +586,9 @@ Perfil Asesor
 
 <div class="property-row">
 
+<div class="property-row" 
+data-keywords="tepic nayarit cassa 3 tres recamaras habitaciones cochera techada patio dos 2 plantas niveles aljibe centrica bomberos avenidas forum">  
+
 <div class="property-image">
 <img src="images/casa-gobernadores.jpg">
 </div>
@@ -526,6 +634,34 @@ Perfil Asesor
 </div>  
 
 </section>
+
+<script>
+function buscarPropiedades(){
+
+const input = document.getElementById("propertySearch");
+const texto = input.value.toLowerCase().trim();
+const propiedades = document.querySelectorAll(".property-row");
+
+propiedades.forEach(propiedad=>{
+
+const contenido = propiedad.innerText.toLowerCase();
+const keywords = (propiedad.dataset.keywords || "").toLowerCase();
+
+if(texto === "" || contenido.includes(texto) || keywords.includes(texto)){
+propiedad.style.display = "grid";
+}else{
+propiedad.style.display = "none";
+}
+
+});
+
+}
+
+function limpiarBusqueda(){
+document.getElementById("propertySearch").value = "";
+buscarPropiedades();
+}
+</script>  
 
 </body>
 </html>
