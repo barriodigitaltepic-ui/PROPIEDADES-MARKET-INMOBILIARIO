@@ -1,1 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Encuentra tu Propiedad | Barrio Digital Inmobiliario</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Montserrat',sans-serif;
+background:#0a0a0a;
+color:white;
+}
+
+.hero{
+padding:120px 8% 60px;
+text-align:center;
+background:
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.85)),
+url('images/marketplace-bg.jpg');
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:60px;
+color:#d4af37;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:900px;
+margin:auto;
+font-size:18px;
+line-height:1.8;
+}
+
+.properties-section{
+padding:60px 8%;
+max-width:1500px;
+margin:auto;
+}
+
+.property-row{
+
+display:grid;
+
+grid-template-columns:
+180px
+1.5fr
+180px
+180px
+340px;
+
+align-items:center;
+
+gap:20px;
+
+background:rgba(255,255,255,.03);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:20px;
+
+padding:15px;
+
+margin-bottom:20px;
+
+transition:.3s;
+}
+
+.property-row:hover{
+border-color:#d4af37;
+transform:translateY(-2px);
+}
+
+.property-image img{
+width:100%;
+height:120px;
+object-fit:cover;
+border-radius:12px;
+}
+
+.property-name h3{
+color:#d4af37;
+font-size:22px;
+margin-bottom:8px;
+}
+
+.property-name p{
+font-size:14px;
+color:#ccc;
+}
+
+.property-city{
+font-weight:600;
+}
+
+.property-price{
+font-size:22px;
+font-weight:700;
+color:#d4af37;
+}
+
+.property-buttons{
+display:flex;
+gap:10px;
+justify-content:flex-end;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:10px 18px;
+border-radius:30px;
+text-decoration:none;
+font-weight:700;
+transition:.3s;
+font-size:14px;
+}
+
+.btn-gold{
+background:#d4af37;
+color:#000;
+}
+
+.btn-outline{
+border:1px solid #d4af37;
+color:#d4af37;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+}
+
+@media(max-width:1100px){
+
+.property-row{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.property-buttons{
+justify-content:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<h1>Encuentra tu Propiedad</h1>
+
+<p>
+
+Casas, terrenos, departamentos, locales comerciales,
+preventa e inversión inmobiliaria en un solo lugar.
+
+</p>
+
+</section>
+
+<section class="properties-section">
+
+<!-- PROPIEDAD 1 -->
+
+<div class="property-row">
+
+<div class="property-image">
+<img src="images/villa-sol.jpg">
+</div>
+
+<div class="property-name">
+
+<h3>Casa Villa Sol</h3>
+
+<p>
+3 recámaras · 2.5 baños · Cochera 2 autos
+</p>
+
+</div>
+
+<div class="property-city">
+Puerto Vallarta
+</div>
+
+<div class="property-price">
+$4,273,000
+</div>
+
+<div class="property-buttons">
+
+<a class="btn btn-outline"
+href="villa-sol.html"
+target="_blank">
+
+Información
+
+</a>
+
+<a class="btn btn-gold"
+href="https://ventasrodrigomaldonado-ux.github.io/RODRIGO-MALDONADO-PERFIL/"
+target="_blank">
+
+Perfil Asesor
+
+</a>
+
+</div>
+
+</div>
+
+<!-- PROPIEDAD 2 -->
+
+<div class="property-row">
+
+<div class="property-image">
+<img src="images/terreno-poetas.jpg">
+</div>
+
+<div class="property-name">
+
+<h3>Terreno Av. de los Poetas</h3>
+
+<p>
+2,100 m² · Uso mixto · Esquina comercial
+</p>
+
+</div>
+
+<div class="property-city">
+Puerto Vallarta
+</div>
+
+<div class="property-price">
+$10,500 m²
+</div>
+
+<div class="property-buttons">
+
+<a class="btn btn-outline"
+href="poetas.html"
+target="_blank">
+
+Información
+
+</a>
+
+<a class="btn btn-gold"
+href="https://ventasrodrigomaldonado-ux.github.io/RODRIGO-MALDONADO-PERFIL/"
+target="_blank">
+
+Perfil Asesor
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</body>
+</html>
