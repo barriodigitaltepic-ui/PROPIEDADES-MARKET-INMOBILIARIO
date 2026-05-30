@@ -195,6 +195,8 @@ color:#000;
 font-weight:800;
 cursor:pointer;
 transition:.3s;
+width:auto;
+min-width:120px;
 }
 
 .search-box button:hover{
@@ -209,16 +211,7 @@ text-align:center;
 font-size:13px;
 line-height:1.7;
 color:rgba(255,255,255,.65);
-}
-
-.search-box{
-flex-direction:column;
-border-radius:28px;
-}
-
-.search-box button{
-width:100%;
-}  
+} 
 
 @media(max-width:1100px){
 
@@ -230,6 +223,15 @@ text-align:center;
 .property-buttons{
 justify-content:center;
 }
+
+.search-box{
+flex-direction:column;
+border-radius:28px;
+}
+
+.search-box button{
+width:100%;
+}  
 
 }
 
