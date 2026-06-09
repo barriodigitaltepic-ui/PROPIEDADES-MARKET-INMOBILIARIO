@@ -102,6 +102,12 @@ width:100%;
 height:120px;
 object-fit:cover;
 border-radius:12px;
+cursor:pointer;
+transition:.3s;
+}
+
+.property-image img:hover{
+transform:scale(1.05);
 }
 
 .property-name h3{
@@ -294,7 +300,7 @@ Busca por palabras clave: casas, departamentos, terrenos, locales, bodegas, play
 data-keywords="villa sol casa puerto vallarta jalisco mexico venta renta familia inversion 3 recamaras tres recamaras 2.5 baños dos plantas cochera playa galerias walmart sams">  
 
 <div class="property-image">
-<img src="images/villa-sol.jpg">
+<img src="images/villa-sol.jpg"onclick="abrirModal(this.src)">
 </div>
 
 <div class="property-name">
@@ -343,7 +349,7 @@ Perfil Asesor
 data-keywords="poetas terreno puerto vallarta jalisco mexico comercial inversion esquina avenida uso mixto local plaza desarrollo franquicia bodega">  
 
 <div class="property-image">
-<img src="images/terreno-poetas.jpg">
+<img src="images/terreno-poetas.jpg"onclick="abrirModal(this.src)">
 </div>
 
 <div class="property-name">
@@ -392,7 +398,7 @@ Perfil Asesor
 data-keywords="desarrollo la calma casa renta 3 tres reacamaras 2 dos plantas cochera alberca coto desarrollo casa club ixtapa puerto vallarta cuc cercas seguridad 24/7 ">  
 
 <div class="property-image">
-<img src="images/la-calma.jpg">
+<img src="images/la-calma.jpg"onclick="abrirModal(this.src)">
 </div>
 
 <div class="property-name">
@@ -441,7 +447,7 @@ Perfil Asesor
 data-keywords="campestre naturaleza laguna lagunas alberca terreno hectareas cerca playa virgen plano palmeras paz">  
 
 <div class="property-image">
-<img src="images/dos-lagunas.jpg">
+<img src="images/dos-lagunas.jpg"onclick="abrirModal(this.src)">
 </div>
 
 <div class="property-name">
@@ -490,7 +496,7 @@ Perfil Asesor
 data-keywords="preventa amenidades avenida acceso bucerias nuevo nayarit vallarta bahia de banderas departamento acceso playa airbnb desarrollo alana life style seguridad privacidad 24/7">  
 
 <div class="property-image">
-<img src="images/alana.jpg">
+<img src="images/alana.jpg"onclick="abrirModal(this.src)">
 </div>
 
 <div class="property-name">
@@ -539,7 +545,7 @@ Perfil Asesor
 data-keywords="sendas desarrollo amenidades privacidad 24/7 cuc ixtapa puerto vallarta airbnb accesible 2 dos recamaras habitaciones alberca areas verdes pet friendly">  
 
 <div class="property-image">
-<img src="images/sendas.jpg">
+<img src="images/sendas.jpg"onclick="abrirModal(this.src)">
 </div>
 
 <div class="property-name">
@@ -588,7 +594,7 @@ Perfil Asesor
 data-keywords="tepic nayarit cassa 3 tres recamaras habitaciones cochera techada patio dos 2 plantas niveles aljibe centrica bomberos avenidas forum">  
 
 <div class="property-image">
-<img src="images/casa-gobernadores.jpg">
+<img src="images/casa-gobernadores.jpg"onclick="abrirModal(this.src)">
 </div>
 
 <div class="property-name">
@@ -637,7 +643,7 @@ Perfil Asesor
 data-keywords="desarrollo coto seguridad 24// alberca departamento casa terreno 1 2 3 plantas expancion propiedad privada armadillo preventa club">  
 
 <div class="property-image">
-<img src="images/tierra-vida.jpg">
+<img src="images/tierra-vida.jpg"onclick="abrirModal(this.src)">
 </div>
 
 <div class="property-name">
@@ -686,7 +692,7 @@ Perfil Asesor
 data-keywords="Desarrollo ALANDA, Ubicado en una de las Zonas de mas Prestigo de Puerto Vallarta, Marina Vallarta, Conoce y Enamorate de tu Nuevo Hogar">  
 
 <div class="property-image">
-<img src="images/perfil-alanda.jpg">
+<img src="images/perfil-alanda.jpg"onclick="abrirModal(this.src)">
 </div>
 
 <div class="property-name">
@@ -735,7 +741,7 @@ Perfil Asesor
 data-keywords="Eleva tu Experiencia con una Ubicación Privilegiada y Eleva tus Días con cada Amenidad."> 
 
 <div class="property-image">
-<img src="images/perfil-soleva.jpg">
+<img src="images/perfil-soleva.jpg"onclick="abrirModal(this.src)">
 </div>
 
 <div class="property-name">
@@ -820,6 +826,51 @@ href="https://barriodigitaltepic-ui.github.io/MARKET-INMOBILIARIO/">
 </a>
 
 </div>
+
+<!-- MODAL IMAGEN -->
+
+<div id="modal"
+style="
+display:none;
+position:fixed;
+z-index:99999;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.95);
+justify-content:center;
+align-items:center;
+cursor:pointer;
+">
+
+<img id="modalImg"
+style="
+max-width:95%;
+max-height:95%;
+border-radius:12px;
+box-shadow:0 0 40px rgba(0,0,0,.8);
+">
+
+</div>
+
+<script>
+
+function abrirModal(src){
+
+document.getElementById("modal").style.display="flex";
+
+document.getElementById("modalImg").src=src;
+
+}
+
+document.getElementById("modal").addEventListener("click",function(){
+
+this.style.display="none";
+
+});
+
+</script> 
 
 </body>
 </html>
