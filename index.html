@@ -783,38 +783,6 @@ Perfil Asesor
 </div>
 
 </div>
-  
- 
-
-</section>
-
-<script>
-function buscarPropiedades(){
-
-const input = document.getElementById("propertySearch");
-const texto = input.value.toLowerCase().trim();
-const propiedades = document.querySelectorAll(".property-row");
-
-propiedades.forEach(propiedad=>{
-
-const contenido = propiedad.innerText.toLowerCase();
-const keywords = (propiedad.dataset.keywords || "").toLowerCase();
-
-if(texto === "" || contenido.includes(texto) || keywords.includes(texto)){
-propiedad.style.display = "grid";
-}else{
-propiedad.style.display = "none";
-}
-
-});
-
-}
-
-function limpiarBusqueda(){
-document.getElementById("propertySearch").value = "";
-buscarPropiedades();
-}
-</script>
 
 <div class="back-home">
 
@@ -852,24 +820,40 @@ border-radius:12px;
 box-shadow:0 0 40px rgba(0,0,0,.8);
 ">
 
-</div>
+</div> 
 
 <script>
+function buscarPropiedades(){
+const input = document.getElementById("propertySearch");
+const texto = input.value.toLowerCase().trim();
+const propiedades = document.querySelectorAll(".property-row");
 
-function abrirModal(src){
+propiedades.forEach(propiedad=>{
+const contenido = propiedad.innerText.toLowerCase();
+const keywords = (propiedad.dataset.keywords || "").toLowerCase();
 
-document.getElementById("modal").style.display="flex";
-
-document.getElementById("modalImg").src=src;
-
+if(texto === "" || contenido.includes(texto) || keywords.includes(texto)){
+propiedad.style.display = "grid";
+}else{
+propiedad.style.display = "none";
+}
+});
 }
 
-document.getElementById("modal").addEventListener("click",function(){
+function limpiarBusqueda(){
+document.getElementById("propertySearch").value = "";
+buscarPropiedades();
+}
 
-this.style.display="none";
+function abrirModal(src){
+document.getElementById("modal").style.display = "flex";
+document.getElementById("modalImg").src = src;
+}
 
+document.getElementById("modal").addEventListener("click", function(){
+this.style.display = "none";
+document.getElementById("modalImg").src = "";
 });
-
 </script> 
 
 </body>
